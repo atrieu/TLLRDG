@@ -169,7 +169,7 @@ heroes =
   , "Chen" => "[url=http://wiki.teamliquid.net/dota2/Chen][h]chen[/h][/url]"
   , "Clinkz" => "[url=http://wiki.teamliquid.net/dota2/Clinkz][h]clinkz[/h][/url]"
   , "Clockwerk" => "[url=http://wiki.teamliquid.net/dota2/Clockwerk][h]clockwerk[/h][/url]"
-  , "Crystal Maiden" => "[url=http://wiki.teamliquid.net/dota2/Crystal_Maiden][h]crystal[/h][/url]"
+  , "Crystal Maiden" => "[url=http://wiki.teamliquid.net/dota2/Crystal_Maiden][h]crystalmaiden[/h][/url]"
   , "Dark Seer" => "[url=http://wiki.teamliquid.net/dota2/Dark_Seer][h]darkseer[/h][/url]"
   , "Dazzle" => "[url=http://wiki.teamliquid.net/dota2/Dazzle][h]dazzle[/h][/url]"
   , "Death Prophet" => "[url=http://wiki.teamliquid.net/dota2/Death_Prophet][h]death[/h][/url]"
