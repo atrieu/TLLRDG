@@ -31,8 +31,8 @@ main = display <~ Window.width
                 ~ Signal.subscribe dban4
                 ~ Signal.subscribe dban5
 
-sidec : Signal.Channel String
-sidec = Signal.channel "[img]http://i.imgur.com/vvshEHz.png[/img]"
+sidec : Signal.Channel Bool
+sidec = Signal.channel True
 
 rpick1 : Signal.Channel String
 rpick1 = Signal.channel "[url=http://wiki.teamliquid.net/dota2/Abaddon][h]abaddon[/h][/url]"
@@ -94,7 +94,7 @@ dban4 = Signal.channel "[url=http://wiki.teamliquid.net/dota2/Abaddon][h]abaddon
 dban5 : Signal.Channel String
 dban5 = Signal.channel "[url=http://wiki.teamliquid.net/dota2/Abaddon][h]abaddon[/h][/url]"
 
-display : Int -> String -> String -> String -> String -> String -> String ->
+display : Int -> Bool -> String -> String -> String -> String -> String ->
           String -> String -> String -> String -> String ->
           String -> String -> String -> String -> String ->
           String -> String -> String -> String -> String -> Element
@@ -146,19 +146,20 @@ display winW side radpick1 radpick2 radpick3 radpick4 radpick5
                   , dropDown (Signal.send dpick4) heroes
                   , dropDown (Signal.send dpick5) heroes ]
               ] |> container winW 200 midTop
-          , "[center]" ++ radpick1 ++ radpick2 ++ radpick3 ++ radpick4 ++ radpick5 ++ "[img]http://i.imgur.com/H1j7SBU.png[/img]" ++ dipick1 ++ dipick2 ++ dipick3 ++ dipick4 ++ dipick5 ++ "\n" ++ side ++ "\n" ++ radban1 ++ radban2 ++ radban3 ++ radban4 ++ radban5 ++ "[img]http://i.imgur.com/4HTXS8I.png[/img]" ++ diban1 ++ diban2 ++ diban3 ++ diban4 ++ diban5 ++ "[/center]"
+          , (if side then "[center]" ++ radpick1 ++ radpick2 ++ radpick3 ++ radpick4 ++ radpick5 ++ "[img]http://i.imgur.com/H1j7SBU.png[/img]" ++ dipick1 ++ dipick2 ++ dipick3 ++ dipick4 ++ dipick5 ++ "\n" ++ "[img]http://i.imgur.com/vvshEHz.png[/img]" ++ "\n" ++ radban1 ++ radban2 ++ radban3 ++ radban4 ++ radban5 ++ "[img]http://i.imgur.com/4HTXS8I.png[/img]" ++ diban1 ++ diban2 ++ diban3 ++ diban4 ++ diban5 ++ "[/center]"
+            else "[center]" ++ dipick1 ++ dipick2 ++ dipick3 ++ dipick4 ++ dipick5 ++ "[img]http://i.imgur.com/H1j7SBU.png[/img]" ++ radpick1 ++ radpick2 ++ radpick3 ++ radpick4 ++ radpick5 ++ "\n" ++ "[img]http://i.imgur.com/M0IcDHl.png[/img]" ++ "\n" ++ diban1 ++ diban2 ++ diban3 ++ diban4 ++ diban5 ++ "[img]http://i.imgur.com/4HTXS8I.png[/img]" ++ radban1 ++ radban2 ++ radban3 ++ radban4 ++ radban5 ++ "[/center]")
           |> Text.fromString
           |> Text.leftAligned
           |> container winW 500 midTop
           ]
 
-(=>) : String -> String -> (String, String)
+(=>) : a -> b -> (a, b)
 (=>) a b = (a, b)
 
-sides : List (String, String)
+sides : List (String, Bool)
 sides =
-  [ "Radiant left" => "[img]http://i.imgur.com/vvshEHz.png[/img]"
-  , "Dire left" => "[img]http://i.imgur.com/M0IcDHl.png[/img]"
+  [ "Radiant left" => True
+  , "Dire left" => False
   ]
 
 heroes : List (String, String)
