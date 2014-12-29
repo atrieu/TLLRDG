@@ -4714,6 +4714,12 @@ Elm.TLDraft.make = function (_elm) {
              ,_0: a
              ,_1: b};
    });
+   var sides = _L.fromArray([A2(_op["=>"],
+                            "Radiant left",
+                            "[img]http://i.imgur.com/vvshEHz.png[/img]")
+                            ,A2(_op["=>"],
+                            "Dire left",
+                            "[img]http://i.imgur.com/M0IcDHl.png[/img]")]);
    var heroes = _L.fromArray([A2(_op["=>"],
                              "Abaddon",
                              "[url=http://wiki.teamliquid.net/dota2/Abaddon][h]abaddon[/h][/url]")
@@ -5058,171 +5064,184 @@ Elm.TLDraft.make = function (_elm) {
    var rpick3 = $Signal.channel("[url=http://wiki.teamliquid.net/dota2/Abaddon][h]abaddon[/h][/url]");
    var rpick2 = $Signal.channel("[url=http://wiki.teamliquid.net/dota2/Abaddon][h]abaddon[/h][/url]");
    var rpick1 = $Signal.channel("[url=http://wiki.teamliquid.net/dota2/Abaddon][h]abaddon[/h][/url]");
+   var sidec = $Signal.channel("[img]http://i.imgur.com/vvshEHz.png[/img]");
    var display = function (winW) {
-      return function (radpick1) {
-         return function (radpick2) {
-            return function (radpick3) {
-               return function (radpick4) {
-                  return function (radpick5) {
-                     return function (radban1) {
-                        return function (radban2) {
-                           return function (radban3) {
-                              return function (radban4) {
-                                 return function (radban5) {
-                                    return function (dipick1) {
-                                       return function (dipick2) {
-                                          return function (dipick3) {
-                                             return function (dipick4) {
-                                                return function (dipick5) {
-                                                   return function (diban1) {
-                                                      return function (diban2) {
-                                                         return function (diban3) {
-                                                            return function (diban4) {
-                                                               return function (diban5) {
-                                                                  return A2($Graphics$Element.flow,
-                                                                  $Graphics$Element.down,
-                                                                  _L.fromArray([A3($Graphics$Element.container,
-                                                                               winW,
-                                                                               20,
-                                                                               $Graphics$Element.midTop)($Text.centered($Text.bold($Text.fromString("Team Liquid Live Report Draft Generator"))))
-                                                                               ,A3($Graphics$Element.container,
-                                                                               winW,
-                                                                               200,
-                                                                               $Graphics$Element.midTop)(A2($Graphics$Element.flow,
-                                                                               $Graphics$Element.right,
-                                                                               _L.fromArray([A2($Graphics$Element.flow,
-                                                                                            $Graphics$Element.down,
-                                                                                            _L.fromArray([$Text.leftAligned($Text.fromString("Radiant Bans"))
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(rban1),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(rban2),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(rban3),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(rban4),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(rban5),
-                                                                                                         heroes)]))
-                                                                                            ,A2($Graphics$Element.spacer,
-                                                                                            30,
-                                                                                            30)
-                                                                                            ,A2($Graphics$Element.flow,
-                                                                                            $Graphics$Element.down,
-                                                                                            _L.fromArray([$Text.leftAligned($Text.fromString("Radiant Picks"))
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(rpick1),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(rpick2),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(rpick3),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(rpick4),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(rpick5),
-                                                                                                         heroes)]))
-                                                                                            ,A2($Graphics$Element.spacer,
-                                                                                            30,
-                                                                                            30)
-                                                                                            ,A2($Graphics$Element.flow,
-                                                                                            $Graphics$Element.down,
-                                                                                            _L.fromArray([$Text.leftAligned($Text.fromString("Dire Bans"))
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(dban1),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(dban2),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(dban3),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(dban4),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(dban5),
-                                                                                                         heroes)]))
-                                                                                            ,A2($Graphics$Element.spacer,
-                                                                                            30,
-                                                                                            30)
-                                                                                            ,A2($Graphics$Element.flow,
-                                                                                            $Graphics$Element.down,
-                                                                                            _L.fromArray([$Text.leftAligned($Text.fromString("Dire Picks"))
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(dpick1),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(dpick2),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(dpick3),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(dpick4),
-                                                                                                         heroes)
-                                                                                                         ,A2($Graphics$Input.dropDown,
-                                                                                                         $Signal.send(dpick5),
-                                                                                                         heroes)]))])))
-                                                                               ,A3($Graphics$Element.container,
-                                                                               winW,
-                                                                               500,
-                                                                               $Graphics$Element.midTop)($Text.leftAligned($Text.fromString(A2($Basics._op["++"],
-                                                                               "[center]",
-                                                                               A2($Basics._op["++"],
-                                                                               radpick1,
-                                                                               A2($Basics._op["++"],
-                                                                               radpick2,
-                                                                               A2($Basics._op["++"],
-                                                                               radpick3,
-                                                                               A2($Basics._op["++"],
-                                                                               radpick4,
-                                                                               A2($Basics._op["++"],
-                                                                               radpick5,
-                                                                               A2($Basics._op["++"],
-                                                                               "[img]http://i.imgur.com/H1j7SBU.png[/img]",
-                                                                               A2($Basics._op["++"],
-                                                                               dipick1,
-                                                                               A2($Basics._op["++"],
-                                                                               dipick2,
-                                                                               A2($Basics._op["++"],
-                                                                               dipick3,
-                                                                               A2($Basics._op["++"],
-                                                                               dipick4,
-                                                                               A2($Basics._op["++"],
-                                                                               dipick5,
-                                                                               A2($Basics._op["++"],
-                                                                               "\n[img]http://i.imgur.com/vvshEHz.png[/img]\n",
-                                                                               A2($Basics._op["++"],
-                                                                               radban1,
-                                                                               A2($Basics._op["++"],
-                                                                               radban2,
-                                                                               A2($Basics._op["++"],
-                                                                               radban3,
-                                                                               A2($Basics._op["++"],
-                                                                               radban4,
-                                                                               A2($Basics._op["++"],
-                                                                               radban5,
-                                                                               A2($Basics._op["++"],
-                                                                               "[img]http://i.imgur.com/4HTXS8I.png[/img]",
-                                                                               A2($Basics._op["++"],
-                                                                               diban1,
-                                                                               A2($Basics._op["++"],
-                                                                               diban2,
-                                                                               A2($Basics._op["++"],
-                                                                               diban3,
-                                                                               A2($Basics._op["++"],
-                                                                               diban4,
-                                                                               A2($Basics._op["++"],
-                                                                               diban5,
-                                                                               "[/center]")))))))))))))))))))))))))))]));
+      return function (side) {
+         return function (radpick1) {
+            return function (radpick2) {
+               return function (radpick3) {
+                  return function (radpick4) {
+                     return function (radpick5) {
+                        return function (radban1) {
+                           return function (radban2) {
+                              return function (radban3) {
+                                 return function (radban4) {
+                                    return function (radban5) {
+                                       return function (dipick1) {
+                                          return function (dipick2) {
+                                             return function (dipick3) {
+                                                return function (dipick4) {
+                                                   return function (dipick5) {
+                                                      return function (diban1) {
+                                                         return function (diban2) {
+                                                            return function (diban3) {
+                                                               return function (diban4) {
+                                                                  return function (diban5) {
+                                                                     return A2($Graphics$Element.flow,
+                                                                     $Graphics$Element.down,
+                                                                     _L.fromArray([A3($Graphics$Element.container,
+                                                                                  winW,
+                                                                                  20,
+                                                                                  $Graphics$Element.midTop)($Text.centered($Text.bold($Text.fromString("Team Liquid Live Report Draft Generator"))))
+                                                                                  ,A3($Graphics$Element.container,
+                                                                                  winW,
+                                                                                  20,
+                                                                                  $Graphics$Element.midTop)(A2($Graphics$Input.dropDown,
+                                                                                  $Signal.send(sidec),
+                                                                                  sides))
+                                                                                  ,A3($Graphics$Element.container,
+                                                                                  winW,
+                                                                                  200,
+                                                                                  $Graphics$Element.midTop)(A2($Graphics$Element.flow,
+                                                                                  $Graphics$Element.right,
+                                                                                  _L.fromArray([A2($Graphics$Element.flow,
+                                                                                               $Graphics$Element.down,
+                                                                                               _L.fromArray([$Text.leftAligned($Text.fromString("Radiant Bans"))
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(rban1),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(rban2),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(rban3),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(rban4),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(rban5),
+                                                                                                            heroes)]))
+                                                                                               ,A2($Graphics$Element.spacer,
+                                                                                               30,
+                                                                                               30)
+                                                                                               ,A2($Graphics$Element.flow,
+                                                                                               $Graphics$Element.down,
+                                                                                               _L.fromArray([$Text.leftAligned($Text.fromString("Radiant Picks"))
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(rpick1),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(rpick2),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(rpick3),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(rpick4),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(rpick5),
+                                                                                                            heroes)]))
+                                                                                               ,A2($Graphics$Element.spacer,
+                                                                                               30,
+                                                                                               30)
+                                                                                               ,A2($Graphics$Element.flow,
+                                                                                               $Graphics$Element.down,
+                                                                                               _L.fromArray([$Text.leftAligned($Text.fromString("Dire Bans"))
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(dban1),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(dban2),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(dban3),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(dban4),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(dban5),
+                                                                                                            heroes)]))
+                                                                                               ,A2($Graphics$Element.spacer,
+                                                                                               30,
+                                                                                               30)
+                                                                                               ,A2($Graphics$Element.flow,
+                                                                                               $Graphics$Element.down,
+                                                                                               _L.fromArray([$Text.leftAligned($Text.fromString("Dire Picks"))
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(dpick1),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(dpick2),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(dpick3),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(dpick4),
+                                                                                                            heroes)
+                                                                                                            ,A2($Graphics$Input.dropDown,
+                                                                                                            $Signal.send(dpick5),
+                                                                                                            heroes)]))])))
+                                                                                  ,A3($Graphics$Element.container,
+                                                                                  winW,
+                                                                                  500,
+                                                                                  $Graphics$Element.midTop)($Text.leftAligned($Text.fromString(A2($Basics._op["++"],
+                                                                                  "[center]",
+                                                                                  A2($Basics._op["++"],
+                                                                                  radpick1,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radpick2,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radpick3,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radpick4,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radpick5,
+                                                                                  A2($Basics._op["++"],
+                                                                                  "[img]http://i.imgur.com/H1j7SBU.png[/img]",
+                                                                                  A2($Basics._op["++"],
+                                                                                  dipick1,
+                                                                                  A2($Basics._op["++"],
+                                                                                  dipick2,
+                                                                                  A2($Basics._op["++"],
+                                                                                  dipick3,
+                                                                                  A2($Basics._op["++"],
+                                                                                  dipick4,
+                                                                                  A2($Basics._op["++"],
+                                                                                  dipick5,
+                                                                                  A2($Basics._op["++"],
+                                                                                  "\n",
+                                                                                  A2($Basics._op["++"],
+                                                                                  side,
+                                                                                  A2($Basics._op["++"],
+                                                                                  "\n",
+                                                                                  A2($Basics._op["++"],
+                                                                                  radban1,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radban2,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radban3,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radban4,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radban5,
+                                                                                  A2($Basics._op["++"],
+                                                                                  "[img]http://i.imgur.com/4HTXS8I.png[/img]",
+                                                                                  A2($Basics._op["++"],
+                                                                                  diban1,
+                                                                                  A2($Basics._op["++"],
+                                                                                  diban2,
+                                                                                  A2($Basics._op["++"],
+                                                                                  diban3,
+                                                                                  A2($Basics._op["++"],
+                                                                                  diban4,
+                                                                                  A2($Basics._op["++"],
+                                                                                  diban5,
+                                                                                  "[/center]")))))))))))))))))))))))))))))]));
+                                                                  };
                                                                };
                                                             };
                                                          };
@@ -5264,9 +5283,11 @@ Elm.TLDraft.make = function (_elm) {
    A2($Signal._op["~"],
    A2($Signal._op["~"],
    A2($Signal._op["~"],
+   A2($Signal._op["~"],
    A2($Signal._op["<~"],
    display,
    $Window.width),
+   $Signal.subscribe(sidec)),
    $Signal.subscribe(rpick1)),
    $Signal.subscribe(rpick2)),
    $Signal.subscribe(rpick3)),
@@ -5289,6 +5310,7 @@ Elm.TLDraft.make = function (_elm) {
    $Signal.subscribe(dban5));
    _elm.TLDraft.values = {_op: _op
                          ,main: main
+                         ,sidec: sidec
                          ,rpick1: rpick1
                          ,rpick2: rpick2
                          ,rpick3: rpick3
@@ -5310,6 +5332,7 @@ Elm.TLDraft.make = function (_elm) {
                          ,dban4: dban4
                          ,dban5: dban5
                          ,display: display
+                         ,sides: sides
                          ,heroes: heroes};
    return _elm.TLDraft.values;
 };Elm.Text = Elm.Text || {};
