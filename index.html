@@ -4716,10 +4716,10 @@ Elm.TLDraft.make = function (_elm) {
    });
    var sides = _L.fromArray([A2(_op["=>"],
                             "Radiant left",
-                            "[img]http://i.imgur.com/vvshEHz.png[/img]")
+                            true)
                             ,A2(_op["=>"],
                             "Dire left",
-                            "[img]http://i.imgur.com/M0IcDHl.png[/img]")]);
+                            false)]);
    var heroes = _L.fromArray([A2(_op["=>"],
                              "Abaddon",
                              "[url=http://wiki.teamliquid.net/dota2/Abaddon][h]abaddon[/h][/url]")
@@ -5064,7 +5064,7 @@ Elm.TLDraft.make = function (_elm) {
    var rpick3 = $Signal.channel("[url=http://wiki.teamliquid.net/dota2/Abaddon][h]abaddon[/h][/url]");
    var rpick2 = $Signal.channel("[url=http://wiki.teamliquid.net/dota2/Abaddon][h]abaddon[/h][/url]");
    var rpick1 = $Signal.channel("[url=http://wiki.teamliquid.net/dota2/Abaddon][h]abaddon[/h][/url]");
-   var sidec = $Signal.channel("[img]http://i.imgur.com/vvshEHz.png[/img]");
+   var sidec = $Signal.channel(true);
    var display = function (winW) {
       return function (side) {
          return function (radpick1) {
@@ -5188,7 +5188,7 @@ Elm.TLDraft.make = function (_elm) {
                                                                                   ,A3($Graphics$Element.container,
                                                                                   winW,
                                                                                   500,
-                                                                                  $Graphics$Element.midTop)($Text.leftAligned($Text.fromString(A2($Basics._op["++"],
+                                                                                  $Graphics$Element.midTop)($Text.leftAligned($Text.fromString(side ? A2($Basics._op["++"],
                                                                                   "[center]",
                                                                                   A2($Basics._op["++"],
                                                                                   radpick1,
@@ -5215,7 +5215,7 @@ Elm.TLDraft.make = function (_elm) {
                                                                                   A2($Basics._op["++"],
                                                                                   "\n",
                                                                                   A2($Basics._op["++"],
-                                                                                  side,
+                                                                                  "[img]http://i.imgur.com/vvshEHz.png[/img]",
                                                                                   A2($Basics._op["++"],
                                                                                   "\n",
                                                                                   A2($Basics._op["++"],
@@ -5240,6 +5240,58 @@ Elm.TLDraft.make = function (_elm) {
                                                                                   diban4,
                                                                                   A2($Basics._op["++"],
                                                                                   diban5,
+                                                                                  "[/center]")))))))))))))))))))))))))) : A2($Basics._op["++"],
+                                                                                  "[center]",
+                                                                                  A2($Basics._op["++"],
+                                                                                  dipick1,
+                                                                                  A2($Basics._op["++"],
+                                                                                  dipick2,
+                                                                                  A2($Basics._op["++"],
+                                                                                  dipick3,
+                                                                                  A2($Basics._op["++"],
+                                                                                  dipick4,
+                                                                                  A2($Basics._op["++"],
+                                                                                  dipick5,
+                                                                                  A2($Basics._op["++"],
+                                                                                  "[img]http://i.imgur.com/H1j7SBU.png[/img]",
+                                                                                  A2($Basics._op["++"],
+                                                                                  radpick1,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radpick2,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radpick3,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radpick4,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radpick5,
+                                                                                  A2($Basics._op["++"],
+                                                                                  "\n",
+                                                                                  A2($Basics._op["++"],
+                                                                                  "[img]http://i.imgur.com/M0IcDHl.png[/img]",
+                                                                                  A2($Basics._op["++"],
+                                                                                  "\n",
+                                                                                  A2($Basics._op["++"],
+                                                                                  diban1,
+                                                                                  A2($Basics._op["++"],
+                                                                                  diban2,
+                                                                                  A2($Basics._op["++"],
+                                                                                  diban3,
+                                                                                  A2($Basics._op["++"],
+                                                                                  diban4,
+                                                                                  A2($Basics._op["++"],
+                                                                                  diban5,
+                                                                                  A2($Basics._op["++"],
+                                                                                  "[img]http://i.imgur.com/4HTXS8I.png[/img]",
+                                                                                  A2($Basics._op["++"],
+                                                                                  radban1,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radban2,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radban3,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radban4,
+                                                                                  A2($Basics._op["++"],
+                                                                                  radban5,
                                                                                   "[/center]")))))))))))))))))))))))))))))]));
                                                                   };
                                                                };
