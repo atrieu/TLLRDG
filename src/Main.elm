@@ -165,8 +165,8 @@ sides =
 heroes : List (String, String)
 heroes =
   [ "Abaddon" => "[url=http://wiki.teamliquid.net/dota2/Abaddon][h]abaddon[/h][/url]"
-  , "Alchemist" => "[url=http://wiki.teamliquid.net/dota2/Alchemist][h]alchemist[/h][/url]",
-  "Ancient Apparition" => "[url=http://wiki.teamliquid.net/dota2/Ancient_Apparition][h]ancientapparition[/h][/url]"
+  , "Alchemist" => "[url=http://wiki.teamliquid.net/dota2/Alchemist][h]alchemist[/h][/url]"
+  , "Ancient Apparition" => "[url=http://wiki.teamliquid.net/dota2/Ancient_Apparition][h]ancientapparition[/h][/url]"
   , "Antimage" => "[url=http://wiki.teamliquid.net/dota2/Antimage][h]antimage[/h][/url]"
   , "Axe" => "[url=http://wiki.teamliquid.net/dota2/Axe][h]axe[/h][/url]"
   , "Bane" => "[url=http://wiki.teamliquid.net/dota2/Bane][h]bane[/h][/url]"
@@ -250,7 +250,7 @@ heroes =
   , "Spirit Breaker" => "[url=http://wiki.teamliquid.net/dota2/Spirit_Breaker][h]spiritbreaker[/h][/url]"
   , "Storm Spirit" => "[url=http://wiki.teamliquid.net/dota2/Storm_Spirit][h]stormspirit[/h][/url]"
   , "Sven" => "[url=http://wiki.teamliquid.net/dota2/Sven][h]sven[/h][/url]"
-  , "Techies" => "[url=http://wiki.teamliquid.net/dota2/Techies][h]techies[/h][url]"
+  , "Techies" => "[url=http://wiki.teamliquid.net/dota2/Techies][h]techies[/h][/url]"
   , "Templar Assassin" => "[url=http://wiki.teamliquid.net/dota2/Templar_Assassin][h]templarassassin[/h][/url]"
   , "Terrorblade" => "[url=http://wiki.teamliquid.net/dota2/Terrorblade][h]terrorblade[/h][/url]"
   , "Tidehunter" => "[url=http://wiki.teamliquid.net/dota2/Tidehunter][h]tidehunter[/h][/url]"
