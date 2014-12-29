@@ -9,6 +9,7 @@ import Window
 
 main : Signal Element
 main = display <~ Window.width
+                ~ Signal.subscribe sidec
                 ~ Signal.subscribe rpick1
                 ~ Signal.subscribe rpick2
                 ~ Signal.subscribe rpick3
@@ -29,6 +30,9 @@ main = display <~ Window.width
                 ~ Signal.subscribe dban3
                 ~ Signal.subscribe dban4
                 ~ Signal.subscribe dban5
+
+sidec : Signal.Channel String
+sidec = Signal.channel "[img]http://i.imgur.com/vvshEHz.png[/img]"
 
 rpick1 : Signal.Channel String
 rpick1 = Signal.channel "[url=http://wiki.teamliquid.net/dota2/Abaddon][h]abaddon[/h][/url]"
@@ -90,11 +94,11 @@ dban4 = Signal.channel "[url=http://wiki.teamliquid.net/dota2/Abaddon][h]abaddon
 dban5 : Signal.Channel String
 dban5 = Signal.channel "[url=http://wiki.teamliquid.net/dota2/Abaddon][h]abaddon[/h][/url]"
 
-display : Int -> String -> String -> String -> String -> String ->
+display : Int -> String -> String -> String -> String -> String -> String ->
           String -> String -> String -> String -> String ->
           String -> String -> String -> String -> String ->
           String -> String -> String -> String -> String -> Element
-display winW radpick1 radpick2 radpick3 radpick4 radpick5
+display winW side radpick1 radpick2 radpick3 radpick4 radpick5
         radban1 radban2 radban3 radban4 radban5
         dipick1 dipick2 dipick3 dipick4 dipick5
         diban1 diban2 diban3 diban4 diban5 =
@@ -102,6 +106,8 @@ display winW radpick1 radpick2 radpick3 radpick4 radpick5
             Text.fromString "Team Liquid Live Report Draft Generator"
             |> Text.bold
             |> Text.centered
+            |> container winW 20 midTop
+            , dropDown (Signal.send sidec) sides
             |> container winW 20 midTop
             , flow right [
                 flow down [
@@ -140,7 +146,7 @@ display winW radpick1 radpick2 radpick3 radpick4 radpick5
                   , dropDown (Signal.send dpick4) heroes
                   , dropDown (Signal.send dpick5) heroes ]
               ] |> container winW 200 midTop
-          , "[center]" ++ radpick1 ++ radpick2 ++ radpick3 ++ radpick4 ++ radpick5 ++ "[img]http://i.imgur.com/H1j7SBU.png[/img]" ++ dipick1 ++ dipick2 ++ dipick3 ++ dipick4 ++ dipick5 ++ "\n[img]http://i.imgur.com/vvshEHz.png[/img]\n" ++ radban1 ++ radban2 ++ radban3 ++ radban4 ++ radban5 ++ "[img]http://i.imgur.com/4HTXS8I.png[/img]" ++ diban1 ++ diban2 ++ diban3 ++ diban4 ++ diban5 ++ "[/center]"
+          , "[center]" ++ radpick1 ++ radpick2 ++ radpick3 ++ radpick4 ++ radpick5 ++ "[img]http://i.imgur.com/H1j7SBU.png[/img]" ++ dipick1 ++ dipick2 ++ dipick3 ++ dipick4 ++ dipick5 ++ "\n" ++ side ++ "\n" ++ radban1 ++ radban2 ++ radban3 ++ radban4 ++ radban5 ++ "[img]http://i.imgur.com/4HTXS8I.png[/img]" ++ diban1 ++ diban2 ++ diban3 ++ diban4 ++ diban5 ++ "[/center]"
           |> Text.fromString
           |> Text.leftAligned
           |> container winW 500 midTop
@@ -148,6 +154,12 @@ display winW radpick1 radpick2 radpick3 radpick4 radpick5
 
 (=>) : String -> String -> (String, String)
 (=>) a b = (a, b)
+
+sides : List (String, String)
+sides =
+  [ "Radiant left" => "[img]http://i.imgur.com/vvshEHz.png[/img]"
+  , "Dire left" => "[img]http://i.imgur.com/M0IcDHl.png[/img]"
+  ]
 
 heroes : List (String, String)
 heroes =
